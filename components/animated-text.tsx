@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
-const words = ["Full-Stack Engineer", "Web Developer", "UI/UX Enthusiast"]
+const words = ["Full-Stack Beginner", "Web Developer", "UI/UX Enthusiast"]
 
 export function AnimatedText() {
   const [currentWord, setCurrentWord] = useState(0)
@@ -42,10 +42,10 @@ export function AnimatedText() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-3xl font-semibold text-yellow-400 flex items-center"
+        className="text-3xl font-semibold text-red-400 flex items-center"
       >
         {currentText}
-        <span className="w-1 h-8 bg-yellow-400 ml-1 animate-blink"></span>
+        <span className="w-1 h-8 bg-red-400 ml-1 animate-blink"></span>
       </motion.div>
     </div>
   )

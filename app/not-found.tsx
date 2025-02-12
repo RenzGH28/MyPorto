@@ -31,7 +31,7 @@ export default function NotFound() {
         <div className="text-center">
           <h1 className="text-9xl font-bold mb-4 animate-pulse">404</h1>
           <div className="relative inline-block">
-            <div className="absolute inset-0 bg-yellow-400 blur-lg opacity-30 animate-ping"></div>
+            <div className="absolute inset-0 bg-red-400 blur-lg opacity-30 animate-ping"></div>
             <h2 className="text-4xl font-semibold mb-4 relative z-10">Halaman Tidak Ditemukan</h2>
           </div>
           <p className="text-xl text-gray-400 mb-8 max-w-md mx-auto">
@@ -53,7 +53,7 @@ export default function NotFound() {
               Muat Ulang Halaman
             </Button>
           </div>
-          <p className="text-yellow-400">
+          <p className="text-red-400">
             Anda akan dialihkan ke halaman beranda dalam {countdown} detik
           </p>
         </div>

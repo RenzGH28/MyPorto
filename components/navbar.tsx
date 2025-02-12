@@ -21,7 +21,7 @@ export function Navbar() {
         <div className="portrait:flex portrait:justify-around portrait:items-center">
           <div className="hidden landscape:flex landscape:justify-center landscape:items-center landscape:w-full">
             <div className="flex landscape:justify-between landscape:items-center landscape:w-full landscape:backdrop-blur-md landscape:bg-black/70 landscape:rounded-full landscape:px-6 landscape:py-2">
-              <span className="text-yellow-400 text-xl font-semibold">Raol Mukarrozi</span>
+              <span className="text-red-400 text-xl font-semibold">Rz Developer</span>
               <div className="flex items-center gap-8">
                 {navItems.map((item) => (
                   <Link
@@ -30,7 +30,7 @@ export function Navbar() {
                     className={cn(
                       "text-gray-300 hover:text-white text-sm font-medium relative px-2 py-1 transition-colors duration-200",
                       pathname === item.href &&
-                        "text-white after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-0.5 after:bg-yellow-400",
+                        "text-white after:absolute after:left-0 after:right-0 after:-bottom-1 after:h-0.5 after:bg-red-400",
                     )}
                   >
                     {item.name}
@@ -38,7 +38,7 @@ export function Navbar() {
                 ))}
               </div>
               <Link
-                href="https://github.com/RaolM"
+                href="https://github.com/RzDev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -54,11 +54,11 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "text-white text-base font-medium relative px-4 py-2",
-                  pathname === item.href && "text-yellow-400",
+                  pathname === item.href && "text-red-400",
                 )}
               >
                 {item.name}
-                {pathname === item.href && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400" />}
+                {pathname === item.href && <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-400" />}
               </Link>
             ))}
           </div>

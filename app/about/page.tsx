@@ -18,10 +18,10 @@ export default function AboutPage() {
   const techStack: Skill[] = [
     { name: "HTML", icon: "https://cdn.iconscout.com/icon/free/png-512/free-html-logo-icon-download-in-svg-png-gif-file-formats--brand-company-business-brands-pack-logos-icons-2284975.png?f=webp&w=512" },
     { name: "CSS", icon: "https://cdn.iconscout.com/icon/free/png-512/free-css-logo-icon-download-in-svg-png-gif-file-formats--logos-pack-icons-722685.png?f=webp&w=512" },
-    { name: "PHP", icon: "https://cdn.iconscout.com/icon/free/png-512/free-php-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175127.png?f=webp&w=512" },
+    /*{ name: "PHP", icon: "https://cdn.iconscout.com/icon/free/png-512/free-php-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175127.png?f=webp&w=512" },*/
     { name: "JavaScript", icon: "https://cdn.iconscout.com/icon/free/png-512/free-javascript-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-225993.png?f=webp&w=512" },
-    { name: "Laravel", icon: "https://cdn.iconscout.com/icon/premium/png-512-thumb/laravel-9305885-7694084.png?f=webp&w=512" },
-    { name: "Vue.js", icon: "https://cdn.iconscout.com/icon/free/png-512/free-vuejs-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175070.png?f=webp&w=512" },
+    /*{ name: "Laravel", icon: "https://cdn.iconscout.com/icon/premium/png-512-thumb/laravel-9305885-7694084.png?f=webp&w=512" },
+    { name: "Vue.js", icon: "https://cdn.iconscout.com/icon/free/png-512/free-vuejs-logo-icon-download-in-svg-png-gif-file-formats--programming-langugae-freebies-pack-logos-icons-1175070.png?f=webp&w=512" },*/
     { name: "Node.js", icon: "https://cdn.iconscout.com/icon/free/png-512/free-nodejs-logo-icon-download-in-svg-png-gif-file-formats--brand-development-tools-pack-logos-icons-226034.png?f=webp&w=512" },
     { name: "Bootstrap", icon: "https://cdn.worldvectorlogo.com/logos/bootstrap-5-1.svg" },
     { name: "React.js", icon: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
@@ -57,7 +57,7 @@ export default function AboutPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               About Me
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-yellow-400"></span>
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-red-500"></span>
             </motion.h1>
             <motion.div
               className="flex flex-col md:flex-row items-center gap-6 mb-6"
@@ -72,11 +72,11 @@ export default function AboutPage() {
                 transition={{ duration: 0.5 }}
               >
                 {/* Glowing ring effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300 blur-md opacity-50 animate-pulse" />
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-500 to-red-400 blur-md opacity-50 animate-pulse" />
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-red-500 to-red-400" />
                 <div className="relative w-32 h-32">
                   <Image
-                    src="https://i.ibb.co.com/Kh2VFL3/IMG-20241205-WA0742.jpg"
+                    src="https://telegra.ph/file/905d4d5faecfcffee4c7d.png"
                     alt="My Profile"
                     width={128}
                     height={128}
@@ -104,7 +104,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-bold mb-6 inline-block relative">
               Skills
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-yellow-400"></span>
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-red-500"></span>
             </h2>
             
             <div className="flex gap-4 mb-6">
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 className={cn(
                   "px-4 py-2 rounded-lg transition-colors",
                   activeTab === 'tech' 
-                    ? "bg-yellow-400/20 text-yellow-400" 
+                    ? "bg-red-500/20 text-red-500" 
                     : "text-gray-400 hover:text-white"
                 )}
               >
@@ -124,7 +124,7 @@ export default function AboutPage() {
                 className={cn(
                   "px-4 py-2 rounded-lg transition-colors",
                   activeTab === 'tools' 
-                    ? "bg-yellow-400/20 text-yellow-400" 
+                    ? "bg-red-500/20 text-red-500" 
                     : "text-gray-400 hover:text-white"
                 )}
               >
@@ -145,7 +145,7 @@ export default function AboutPage() {
               {(activeTab === 'tech' ? techStack : tools).map((skill, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-4 p-4 rounded-lg border border-yellow-400 hover:border-yellow-400/50 transition-colors bg-zinc-900/50"
+                  className="flex items-center gap-4 p-4 rounded-lg border border-red-500 hover:border-red-400/50 transition-colors bg-zinc-900/50"
                   variants={fadeInUp}
                 >
                   <Image
@@ -168,7 +168,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-bold mb-6 inline-block relative">
               Contact Me
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-yellow-400"></span>
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-red-500"></span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -180,8 +180,8 @@ export default function AboutPage() {
               >
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Email</h3>
-                  <a href="mailto:your.email@example.com" className="text-yellow-400 hover:underline">
-                    your.email@example.com
+                  <a href="mailto:your.renz4you28@example.com" className="text-red-500 hover:underline">
+                    renz4you28@example.com
                   </a>
                 </div>
                 <div>
@@ -190,7 +190,7 @@ export default function AboutPage() {
                     href="https://linkedin.com/in/your-profile" 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="text-yellow-400 hover:underline"
+                    className="text-red-400 hover:underline"
                   >
                     linkedin.com/in/your-profile
                   </a>
@@ -205,7 +205,7 @@ export default function AboutPage() {
               >
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Location</h3>
-                  <p className="text-gray-300">Your City, Country</p>
+                  <p className="text-gray-300">Jambi, Kota Jambi, Indonesia</p>
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Available for</h3>
