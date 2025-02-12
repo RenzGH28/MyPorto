@@ -1,0 +1,8 @@
+export function ShopPage() {
+  return (
+    <div className="text-white">
+      <h1>Shop Page</h1>
+      <p>Ini halaman shop kamu.</p>
+    </div>
+  );
+}
