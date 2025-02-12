@@ -7,7 +7,7 @@ import { Header } from "@/components/header"
 import { Navbar } from "@/components/navbar"
 import { cn } from "@/lib/utils"
 
-export function ShopPage() {
+export default function ShopPage() {
   return (
     <div className="text-white">
       <h1>Shop Page</h1>
