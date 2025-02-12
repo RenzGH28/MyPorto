@@ -78,13 +78,14 @@ export default function PortfolioPage() {
             transition={{ duration: 0.5 }}
             className="relative"
           >
-            {activeTab === "projects" && (
+            /*{activeTab === "projects" && (
               <div className="grid gap-6">
                 <div className="bg-zinc-900 rounded-xl p-6">
                   <h3 className="text-xl font-semibold mb-2 text-white">Project content coming soon...</h3>
                 </div>
               </div>
-            )}
+            )}*/
+            {activeTab === "projects" && <Projects />}
 
             {activeTab === "certificates" && (
               <div className="grid gap-6">
