@@ -180,7 +180,7 @@ export default function AboutPage() {
               >
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Email</h3>
-                  <a href="mailto:your.renz4you28@example.com" className="text-red-500 hover:underline">
+                  <a href="mailto:renz4you28@example.com" className="text-red-500 hover:underline">
                     renz4you28@example.com
                   </a>
                 </div>
