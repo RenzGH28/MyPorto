@@ -10,13 +10,24 @@ export function middleware(request: NextRequest) {
   // List User-Agent yang diperbolehkan (hanya browser)
   const allowedAgents = ["Mozilla", "Chrome", "Safari", "Firefox", "Edge"]
 
-  // Cek apakah User-Agent berasal dari browser
-  const isAllowed = allowedAgents.some(agent => userAgent.includes(agent))
+  // Path yang boleh diakses tanpa middleware
+  const allowedPaths = [
+    "/api/send-email",
+    "/api/quotes"
+  ]
 
-  if (!isAllowed) {
-    return new NextResponse("Access Denied!! Your Browser Not Permission To Access My Domain!", {
-      status: 403
-    })
+  // Cek jika URL masuk dalam daftar pengecualian
+  const isApiAllowed = allowedPaths.some(path => request.nextUrl.pathname.startsWith(path))
+
+  if (!isApiAllowed) {
+    // Cek apakah User-Agent berasal dari browser
+    const isAllowed = allowedAgents.some(agent => userAgent.includes(agent))
+
+    if (!isAllowed) {
+      return new NextResponse("Access Denied!! Your Browser Not Permission To Access My Web!", {
+        status: 403
+      })
+    }
   }
 
   // Add security headers
@@ -28,5 +39,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/:path*', // Berlaku untuk semua halaman
+  matcher: '/:path*', // Middleware berlaku di semua halaman
 }

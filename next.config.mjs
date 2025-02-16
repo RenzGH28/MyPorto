@@ -1,3 +1,6 @@
+import dotenv from 'dotenv'
+dotenv.config()
+
 let userConfig = undefined
 try {
   userConfig = await import('./v0-user-next.config')
@@ -21,6 +24,10 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
+  env: {
+    EMAIL_USER: process.env.EMAIL_USER || '',
+    EMAIL_PASS: process.env.EMAIL_PASS || '',
+  }
 }
 
 mergeConfig(nextConfig, userConfig)
