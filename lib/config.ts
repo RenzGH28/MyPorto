@@ -7,7 +7,7 @@
 
     export const siteConfig = {
       // Website information
-      name: "Rz Developeri",
+      name: "Rz Developer",
       title: "Rz Developer - Personal Portfolio",
       description: "Tech enthusiast who loves breaking and rebuilding systems. Full-Stack Engineer and System & Software Modder with a passion for automation, security, and digital customization. Always exploring new technologies, from backend development to system modifications.",
     
@@ -29,7 +29,7 @@
       // Media settings
       media: {
         backgroundMusic: "https://files.catbox.moe/kxu767.mp3",
-        profileImage: "https://raw.githubusercontent.com/latesturl/dbCDN/refs/heads/main/my-DB/my-profile.jpg",
+        profileImage: "https://files.catbox.moe/4gvmlh.jpg",
         portfolioImage: "https://raw.githubusercontent.com/latesturl/dbCDN/refs/heads/main/my-DB/my-portofolio.jpg",
       },
 
