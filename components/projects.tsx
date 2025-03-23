@@ -6,7 +6,6 @@ export function Projects() {
     { name: "Project 1", description: "A web application built with React and Node.js" },
     { name: "Project 2", description: "An e-commerce platform using Laravel and MySQL" },
     { name: "Project 3", description: "A responsive website designed with Tailwind CSS" },
-    { name: "Project 4", description: "A NodeJs Based WhatsApp Bot Using Baileys Library And Integrated With PPOB Website And TopUp Website." },
   ]
 
   return (

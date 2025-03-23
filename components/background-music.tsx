@@ -1,64 +1,64 @@
 "use client"
 
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, memo } from "react"
 import { Volume2, VolumeX } from "lucide-react"
+import { siteConfig } from "@/lib/config"
 
-export default function BackgroundMusic() {
-  const [isMuted, setIsMuted] = useState(false) // Start unmuted for autoplay attempt
+const BackgroundMusic = memo(function BackgroundMusic() {
+  const [isMuted, setIsMuted] = useState(true) // Start muted by default
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(true) // Set to true by default to ensure button appears
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
     const audio = audioRef.current
-    if (audio) {
-      // Set initial volume
-      audio.volume = 0.5
+    if (!audio) return
 
-      const handleEnded = () => {
-        setIsPlaying(false)
-        setIsMuted(true)
-        if (audio) {
-          audio.muted = true
-          audio.pause()
-        }
-      }
+    // Set initial volume
+    audio.volume = 0.5
 
-      const handlePlay = () => {
-        setIsPlaying(true)
-        setIsMuted(false)
-      }
+    // Preload audio but don't autoplay
+    audio.preload = "auto" // Changed to auto for better loading
 
-      const handlePause = () => {
-        setIsPlaying(false)
-      }
+    const handleCanPlayThrough = () => {
+      setIsLoaded(true)
+    }
 
-      // Add event listeners
-      audio.addEventListener("ended", handleEnded)
-      audio.addEventListener("play", handlePlay)
-      audio.addEventListener("pause", handlePause)
+    const handleEnded = () => {
+      setIsPlaying(false)
+      setIsMuted(true)
+    }
 
-      // Attempt autoplay
-      const attemptAutoplay = async () => {
-        try {
-          await audio.play()
-          setIsPlaying(true)
-          setIsMuted(false)
-        } catch (error) {
-          console.log("Autoplay failed:", error)
-          setIsPlaying(false)
-          setIsMuted(true)
-          audio.muted = true
-        }
-      }
+    const handlePlay = () => {
+      setIsPlaying(true)
+      setIsMuted(false)
+    }
 
-      attemptAutoplay()
+    const handlePause = () => {
+      setIsPlaying(false)
+    }
 
-      // Cleanup
-      return () => {
-        audio.removeEventListener("ended", handleEnded)
-        audio.removeEventListener("play", handlePlay)
-        audio.removeEventListener("pause", handlePause)
-      }
+    // Add event listeners
+    audio.addEventListener("canplaythrough", handleCanPlayThrough)
+    audio.addEventListener("ended", handleEnded)
+    audio.addEventListener("play", handlePlay)
+    audio.addEventListener("pause", handlePause)
+
+    // Force isLoaded to true after a timeout as fallback
+    const timer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 1000)
+
+    // Cleanup
+    return () => {
+      clearTimeout(timer)
+      audio.removeEventListener("canplaythrough", handleCanPlayThrough)
+      audio.removeEventListener("ended", handleEnded)
+      audio.removeEventListener("play", handlePlay)
+      audio.removeEventListener("pause", handlePause)
+
+      // Ensure audio is stopped when component unmounts
+      audio.pause()
     }
   }, [])
 
@@ -88,22 +88,39 @@ export default function BackgroundMusic() {
 
   return (
     <>
-      <audio ref={audioRef} src="https://files.catbox.moe/hbb762.mp3" preload="auto" />
-      <button
-        onClick={togglePlayback}
-        className="fixed bottom-4 right-4 z-50 p-3 bg-black/50 rounded-full hover:bg-black/70 transition-colors touch-manipulation"
-        aria-label={isMuted ? "Unmute background music" : "Mute background music"}
-        style={{
-          WebkitTapHighlightColor: "transparent",
-        }}
-      >
-        {isMuted || !isPlaying ? (
-          <VolumeX className="w-6 h-6 text-white" />
-        ) : (
-          <Volume2 className="w-6 h-6 text-white" />
-        )}
-      </button>
+      <audio ref={audioRef} src={siteConfig.media.backgroundMusic} preload="auto" />
+
+      {/* Music control button - responsive across all platforms */}
+      <div className="fixed landscape:top-20 landscape:right-4 portrait:bottom-24 portrait:right-4 z-[9999]">
+        <button
+          onClick={togglePlayback}
+          className="flex items-center justify-center gap-1.5 bg-black/80 hover:bg-black p-3 sm:p-2 rounded-full transition-all duration-300 border border-yellow-400/50 hover:border-yellow-400 shadow-lg group touch-manipulation min-w-[44px] min-h-[44px]"
+          aria-label={isMuted ? "Unmute background music" : "Mute background music"}
+          style={{
+            WebkitTapHighlightColor: "transparent",
+          }}
+        >
+          {isMuted || !isPlaying ? (
+            <VolumeX className="w-5 h-5 sm:w-4 sm:h-4 text-white" />
+          ) : (
+            <Volume2 className="w-5 h-5 sm:w-4 sm:h-4 text-white" />
+          )}
+          <span className="text-xs text-white hidden group-hover:inline-block whitespace-nowrap max-w-0 group-hover:max-w-xs overflow-hidden transition-all duration-300">
+            {isMuted || !isPlaying ? "Play Music" : "Pause Music"}
+          </span>
+
+          {/* Pulsing animation when muted to draw attention */}
+          {(isMuted || !isPlaying) && (
+            <span className="absolute -top-1 -right-1 flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+            </span>
+          )}
+        </button>
+      </div>
     </>
   )
-}
+})
+
+export default BackgroundMusic
 

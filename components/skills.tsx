@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Code, Palette, FileJson, Layers, Server, Database, Globe, Terminal, Cpu } from 'lucide-react'
+import { Code, Palette, FileJson, Layers, Server, Database, Globe, Terminal, Cpu } from "lucide-react"
 
 export function Skills() {
   const skills = [
