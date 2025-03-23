@@ -78,7 +78,7 @@ export const Navbar = memo(function Navbar() {
             <div className="container mx-auto px-4 py-4">
               <div className="flex justify-between items-center backdrop-blur-md bg-black/70 rounded-full px-6 py-3 shadow-lg">
                 <motion.span
-                  className="text-yellow-400 text-xl font-semibold whitespace-nowrap"
+                  className="text-red-400 text-xl font-semibold whitespace-nowrap"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 400 }}
@@ -106,7 +106,7 @@ export const Navbar = memo(function Navbar() {
                         {item.name}
                         {pathname === item.href && (
                           <motion.span
-                            className="absolute left-0 right-0 -bottom-1 h-0.5 bg-yellow-400"
+                            className="absolute left-0 right-0 -bottom-1 h-0.5 bg-red-400"
                             layoutId="underline"
                             transition={{ type: "spring", stiffness: 300, damping: 30 }}
                           />
@@ -138,7 +138,7 @@ export const Navbar = memo(function Navbar() {
                             {item.name}
                             {pathname === item.href && (
                               <motion.span
-                                className="absolute left-0 right-0 -bottom-1 h-0.5 bg-yellow-400"
+                                className="absolute left-0 right-0 -bottom-1 h-0.5 bg-red-400"
                                 layoutId="underline-small"
                                 transition={{ type: "spring", stiffness: 300, damping: 30 }}
                               />
@@ -180,13 +180,13 @@ export const Navbar = memo(function Navbar() {
                   href={item.href}
                   className={cn(
                     "text-white text-base font-medium relative",
-                    pathname === item.href && "text-yellow-400",
+                    pathname === item.href && "text-red-400",
                   )}
                 >
                   {item.name}
                   {pathname === item.href && (
                     <motion.span
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-400"
                       layoutId="underline-mobile"
                       initial={{ scaleX: 0.5, opacity: 0.5 }}
                       animate={{ scaleX: 1, opacity: 1 }}

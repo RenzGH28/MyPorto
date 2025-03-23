@@ -36,11 +36,11 @@ export const Hero = memo(function Hero() {
           className="mb-8 relative inline-block"
         >
           {/* Optimized glowing ring effect */}
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300 blur-md opacity-50" />
-          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-400 to-red-300 blur-md opacity-50" />
+          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-red-400 to-red-300" />
           <div className="relative">
             <Image
-              src="https://raw.githubusercontent.com/latesturl/dbCDN/refs/heads/main/my-DB/my-profile.jpg"
+              src="https://files.catbox.moe/4gvmlh.jpg"
               alt="My Profile"
               width={200}
               height={200}
@@ -54,7 +54,7 @@ export const Hero = memo(function Hero() {
           initial={{ y: -10, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="text-yellow-400 text-xl mb-2"
+          className="text-red-400 text-xl mb-2"
         >
           Hello World, I&apos;m
         </motion.p>
@@ -65,7 +65,7 @@ export const Hero = memo(function Hero() {
           transition={{ duration: 0.3, delay: 0.2 }}
           className="text-5xl font-bold mb-4"
         >
-          Raol Mukarrozi
+          Rz Developer
         </motion.h1>
 
         <div className="text-3xl font-semibold mb-4 h-12 flex items-center justify-center">
