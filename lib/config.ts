@@ -9,7 +9,7 @@
       // Website information
       name: "Rz Developeri",
       title: "Rz Developer - Personal Portfolio",
-      description: "Tech enthusiast who loves breaking and rebuilding systems. Full-Stack Engineer and System & Software Modder with a passion for automation, security, and digital customization. Always exploring new technologies, from backend development to system modifications."
+      description: "Tech enthusiast who loves breaking and rebuilding systems. Full-Stack Engineer and System & Software Modder with a passion for automation, security, and digital customization. Always exploring new technologies, from backend development to system modifications.",
     
       // Social media links
       social: {
