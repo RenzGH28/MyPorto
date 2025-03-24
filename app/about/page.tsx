@@ -17,7 +17,7 @@ const tabButtonVariants = {
     borderRadius: "0.5rem",
   },
   hover: {
-    backgroundColor: "rgba(250, 204, 21, 0.15)",
+    backgroundColor: "rgba(250, 0, 0, 0.1)",
     scale: 1.05,
     transition: {
       duration: 0.3,
@@ -26,7 +26,7 @@ const tabButtonVariants = {
   },
   tap: {
     scale: 0.95,
-    backgroundColor: "rgba(250, 204, 21, 0.25)",
+    backgroundColor: "rgba(250, 0, 0, 0.1)",
     borderRadius: "0.75rem",
     transition: {
       type: "spring",
@@ -35,7 +35,7 @@ const tabButtonVariants = {
     },
   },
   active: {
-    backgroundColor: "rgba(250, 204, 21, 0.2)",
+    backgroundColor: "rgba(250, 0, 0, 0.1)",
     color: "rgb(250, 204, 21)",
     scale: 1,
     transition: {
@@ -95,7 +95,7 @@ export default function AboutPage() {
               transition={{ duration: 0.3, delay: 0.1 }}
             >
               About Me
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-yellow-400"></span>
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-red-400"></span>
             </motion.h1>
             <motion.div
               className="flex flex-col md:flex-row items-center gap-6 mb-6"
@@ -110,8 +110,8 @@ export default function AboutPage() {
                 transition={{ duration: 0.3 }}
               >
                 {/* Optimized glowing effect */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300 blur-md opacity-50" />
-                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-yellow-400 to-yellow-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-red-400 to-red-300 blur-md opacity-50" />
+                <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-red-400 to-red-300" />
                 <div className="relative w-32 h-32">
                   <Image
                     src={siteConfig.media.profileImage || "/placeholder.svg"}
@@ -144,7 +144,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-bold mb-6 inline-block relative">
               Skills
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-yellow-400"></span>
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-red-400"></span>
             </h2>
 
             <div className="flex gap-4 mb-6">
@@ -160,7 +160,7 @@ export default function AboutPage() {
                 Tech Stack
                 {activeTab === "tech" && (
                   <motion.span
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-400"
                     layoutId="tabIndicator"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -181,7 +181,7 @@ export default function AboutPage() {
                 Tools
                 {activeTab === "tools" && (
                   <motion.span
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-400"
                     layoutId="tabIndicator"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -202,7 +202,7 @@ export default function AboutPage() {
                 All Skills
                 {activeTab === "all" && (
                   <motion.span
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-yellow-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-red-400"
                     layoutId="tabIndicator"
                     initial={{ scaleX: 0 }}
                     animate={{ scaleX: 1 }}
@@ -226,7 +226,7 @@ export default function AboutPage() {
               {getCurrentSkills().map((skill, index) => (
                 <motion.div
                   key={skill.name}
-                  className="flex items-center gap-4 p-4 rounded-lg border border-yellow-400 hover:border-yellow-400/50 transition-colors bg-zinc-900/50"
+                  className="flex items-center gap-4 p-4 rounded-lg border border-red-400 hover:border-red-400/50 transition-colors bg-zinc-900/50"
                   variants={fadeInUp}
                   whileHover={{
                     y: -5,
@@ -254,7 +254,7 @@ export default function AboutPage() {
                           "text-xs",
                           skill.level === "beginner" && "text-blue-400",
                           skill.level === "intermediate" && "text-green-400",
-                          skill.level === "advanced" && "text-yellow-400",
+                          skill.level === "advanced" && "text-red-400",
                           skill.level === "expert" && "text-purple-400",
                         )}
                       >
@@ -275,7 +275,7 @@ export default function AboutPage() {
           >
             <h2 className="text-2xl font-bold mb-6 inline-block relative">
               Contact Me
-              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-yellow-400"></span>
+              <span className="absolute -bottom-2 left-0 w-12 h-1 bg-red-400"></span>
             </h2>
 
             <div className="grid md:grid-cols-2 gap-6">
@@ -287,7 +287,7 @@ export default function AboutPage() {
               >
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Email</h3>
-                  <a href={`mailto:${siteConfig.social.email}`} className="text-yellow-400 hover:underline">
+                  <a href={`mailto:${siteConfig.social.email}`} className="text-red-400 hover:underline">
                     {siteConfig.social.email}
                   </a>
                 </div>
