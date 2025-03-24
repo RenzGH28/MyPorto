@@ -48,7 +48,7 @@ const mobileButtonVariants = {
     borderRadius: "4px",
   },
   hover: {
-    backgroundColor: "rgba(250, 204, 21, 0.15)",
+    backgroundColor: "rgba(250, 0, 0, 0.1)",
     scale: 1.05,
     transition: {
       duration: 0.3,
@@ -57,7 +57,7 @@ const mobileButtonVariants = {
   },
   tap: {
     scale: 0.9,
-    backgroundColor: "rgba(250, 204, 21, 0.25)",
+    backgroundColor: "rgba(250, 0, 0, 0.1)",
     borderRadius: "12px",
     transition: {
       type: "spring",
