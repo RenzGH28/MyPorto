@@ -71,10 +71,10 @@ export default function PortfolioPage() {
                   <tab.icon className={cn("w-5 h-5 sm:w-6 sm:h-6", !tab.available && "opacity-50")} />
                   <span className="text-xs sm:text-sm font-medium line-clamp-1">{tab.label}</span>
                   {activeTab === tab.id && tab.available && (
-                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-yellow-400 rounded-full"></span>
+                    <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-12 h-1 bg-red-400 rounded-full"></span>
                   )}
                   {!tab.available && (
-                    <span className="absolute -top-1 -right-1 text-xs px-1.5 py-0.5 bg-yellow-400/20 text-yellow-400 rounded-full hidden sm:inline-block">
+                    <span className="absolute -top-1 -right-1 text-xs px-1.5 py-0.5 bg-red-400/20 text-red-400 rounded-full hidden sm:inline-block">
                       Soon
                     </span>
                   )}
@@ -105,7 +105,7 @@ export default function PortfolioPage() {
                     >
                       <div>
                         <div className="w-16 h-16 bg-zinc-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <Code2 className="w-8 h-8 text-yellow-400" />
+                          <Code2 className="w-8 h-8 text-red-400" />
                         </div>
                         <h4 className="text-xl font-semibold mb-2">Projects Coming Soon</h4>
                         <p className="text-gray-400">
@@ -135,7 +135,7 @@ export default function PortfolioPage() {
 
                   <div className="flex items-center justify-center p-12">
                     <div className="text-center">
-                      <Music className="w-16 h-16 text-yellow-400 mx-auto mb-4" />
+                      <Music className="w-16 h-16 text-red-400 mx-auto mb-4" />
                       <p className="text-gray-300">Stay tuned for my music collection!</p>
                     </div>
                   </div>
