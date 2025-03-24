@@ -46,10 +46,10 @@ export const AnimatedText = memo(function AnimatedText() {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3 }}
-        className="text-3xl font-semibold text-yellow-400 flex items-center"
+        className="text-3xl font-semibold text-red-400 flex items-center"
       >
         {currentText}
-        <span className="w-1 h-8 bg-yellow-400 ml-1 animate-blink"></span>
+        <span className="w-1 h-8 bg-red-400 ml-1 animate-blink"></span>
       </motion.div>
     </div>
   )
