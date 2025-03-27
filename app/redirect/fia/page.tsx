@@ -13,7 +13,7 @@ export default function RenzPage() {
 
     // Redirect setelah 3 detik
     const timeout = setTimeout(() => {
-      router.push("https://blablabla.xyz/fia/pesan-spesial");
+      router.push("https://rztech.vercel.app/kasyfia/pesan-spesial");
     }, 3000);
 
     return () => {
