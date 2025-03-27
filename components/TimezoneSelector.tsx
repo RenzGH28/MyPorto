@@ -36,7 +36,7 @@ export function TimezoneSelector({ continent, setContinent, timezone, setTimezon
             <option value="">-- Pilih Zona Waktu --</option>
             {timezones[continent].map((tz) => (
               <option key={tz} value={tz}>
-                {tz}
+                {formatTimezone(tz)}
               </option>
             ))}
           </select>
