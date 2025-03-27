@@ -4,7 +4,8 @@
  * This file contains all the configurable settings for the website.
  * Edit these values to update the website content without changing code.
  */
- 
+    // Recode And Added Feature
+    
      export const timezones = {
   Asia: ["Asia/Jakarta", "Asia/Tokyo", "Asia/Seoul", "Asia/Kolkata"],
   Eropa: ["Europe/London", "Europe/Moscow", "Europe/Istanbul", "Europe/Madrid"],
@@ -16,6 +17,19 @@
     export function formatTimezone(tz: string): string {
         return tz.replace(/_/g, " ");
     }
+    
+    // My More
+    
+    export const lebaranSongs = [
+  {
+    title: "Lagu Lebaran 1",
+    spotifyUrl: "https://open.spotify.com/track/4YxgOtbkTJKYDShDEdrYnr?si=hiJktQ7IQ3-vxEXf4Rai7Q",
+  },
+  {
+    title: "Lagu Lebaran 2",
+    spotifyUrl: "https://open.spotify.com/track/4gcQ4sBOIX8s510XrNZQUA?si=jpHNjg0nRdO1Fztohv1dCg",
+  },
+];
 
     export const siteConfig = {
       // Website information
