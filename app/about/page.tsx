@@ -36,7 +36,7 @@ const tabButtonVariants = {
   },
   active: {
     backgroundColor: "rgba(250, 0, 0, 0.1)",
-    color: "rgb(250, 204, 21)",
+    color: "rgb(250, 0, 21)",
     scale: 1,
     transition: {
       duration: 0.3,
