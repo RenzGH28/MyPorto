@@ -1,4 +1,4 @@
-import { timezones } from "@/lib/config";
+import { timezones, formatTimezone } from "@/lib/config";
 
 interface TimezoneSelectorProps {
   continent: string;
