@@ -94,7 +94,7 @@ const BackgroundMusic = memo(function BackgroundMusic() {
       <div className="fixed landscape:top-20 landscape:right-4 portrait:bottom-24 portrait:right-4 z-[9999]">
         <button
           onClick={togglePlayback}
-          className="flex items-center justify-center gap-1.5 bg-black/80 hover:bg-black p-3 sm:p-2 rounded-full transition-all duration-300 border border-yellow-400/50 hover:border-yellow-400 shadow-lg group touch-manipulation min-w-[44px] min-h-[44px]"
+          className="flex items-center justify-center gap-1.5 bg-black/80 hover:bg-black p-3 sm:p-2 rounded-full transition-all duration-300 border border-red-400/50 hover:border-red-400 shadow-lg group touch-manipulation min-w-[44px] min-h-[44px]"
           aria-label={isMuted ? "Unmute background music" : "Mute background music"}
           style={{
             WebkitTapHighlightColor: "transparent",
@@ -112,8 +112,8 @@ const BackgroundMusic = memo(function BackgroundMusic() {
           {/* Pulsing animation when muted to draw attention */}
           {(isMuted || !isPlaying) && (
             <span className="absolute -top-1 -right-1 flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-400"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-red-400"></span>
             </span>
           )}
         </button>
