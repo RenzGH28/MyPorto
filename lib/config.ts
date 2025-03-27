@@ -4,6 +4,12 @@
  * This file contains all the configurable settings for the website.
  * Edit these values to update the website content without changing code.
  */
+ 
+     export const timezones = {
+      Asia: ["Asia/Jakarta", "Asia/Tokyo", "Asia/Dubai"],
+      Eropa: ["Europe/London", "Europe/Paris", "Europe/Berlin"],
+      Amerika: ["America/New_York", "America/Los_Angeles", "America/Sao_Paulo"],
+    };
 
     export const siteConfig = {
       // Website information
