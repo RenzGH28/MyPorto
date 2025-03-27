@@ -6,10 +6,16 @@
  */
  
      export const timezones = {
-      Asia: ["Asia/Jakarta", "Asia/Tokyo", "Asia/Dubai"],
-      Eropa: ["Europe/London", "Europe/Paris", "Europe/Berlin"],
-      Amerika: ["America/New_York", "America/Los_Angeles", "America/Sao_Paulo"],
-    };
+  Asia: ["Asia/Jakarta", "Asia/Tokyo", "Asia/Seoul", "Asia/Kolkata"],
+  Eropa: ["Europe/London", "Europe/Moscow", "Europe/Istanbul", "Europe/Madrid"],
+  Amerika: ["America/New_York", "America/Chicago", "America/Denver", "America/Los_Angeles"],
+  Afrika: ["Africa/Cairo", "Africa/Johannesburg", "Africa/Nairobi", "Africa/Lagos"],
+  Australia: ["Australia/Sydney", "Australia/Perth", "Australia/Adelaide", "Australia/Hobart"],
+    }
+
+    export function formatTimezone(tz: string): string {
+        return tz.replace(/_/g, " ");
+    }
 
     export const siteConfig = {
       // Website information
