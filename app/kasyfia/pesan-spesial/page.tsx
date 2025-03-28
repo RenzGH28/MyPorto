@@ -24,9 +24,9 @@ export default function LebaranPage() {
       {showMessage && <LebaranMessage />}
 
       {/* Kode QR untuk halaman ini */}
-      <div className="mt-6">
+     /* <div className="mt-6">
         <QrGenerator url="https://rztech.vercel.app/kasyfia/pesan-spesial" />
-      </div>
+      </div>*/
 
       {/* Tombol ke WhatsApp */}
       <a
