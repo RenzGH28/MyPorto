@@ -2,10 +2,18 @@
 
 import { useState } from "react";
 import { LebaranMessage } from "@/components/LebaranMessage";
-import { QrGenerator } from "@/components/QrGenerator";
 
 export default function LebaranPage() {
   const [showMessage, setShowMessage] = useState(false);
+  const [customMessage, setCustomMessage] = useState("");
+
+  // Fungsi untuk mengarahkan ke WhatsApp dengan pesan custom
+  const handleSendMessage = () => {
+    const defaultMessage = "Selamat Idul Fitri!"; // Pesan default
+    const finalMessage = customMessage.trim() || defaultMessage; // Pakai pesan custom kalau ada
+    const encodedMessage = encodeURIComponent(finalMessage); // Encode biar aman di URL
+    window.open(`https://wa.me/6283845201171?text=${encodedMessage}`, "_blank");
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-green-100 text-center p-4">
@@ -23,18 +31,24 @@ export default function LebaranPage() {
       {/* Pesan Lebaran Interaktif */}
       {showMessage && <LebaranMessage />}
 
-      {/* Kode QR untuk halaman ini */}
-     {/* <div className="mt-6">
-        <QrGenerator url="https://rztech.vercel.app/kasyfia/pesan-spesial" />
-      </div>*/}
+      {/* Input Pesan Custom */}
+      <div className="mt-4 w-full max-w-md">
+        <input
+          type="text"
+          placeholder="Ketik pesanmu di sini..."
+          value={customMessage}
+          onChange={(e) => setCustomMessage(e.target.value)}
+          className="w-full p-2 border border-gray-300 rounded-md"
+        />
+      </div>
 
-      {/* Tombol ke WhatsApp */}
-      <a
-        href="https://wa.me/6283845201171?text=Selamat%20Idul%20Fitri!"
+      {/* Tombol untuk mengirim pesan ke WhatsApp */}
+      <button
+        onClick={handleSendMessage}
         className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700"
       >
-        Balas Pesan
-      </a>
+        Kirim ke WhatsApp
+      </button>
     </div>
   );
 }
