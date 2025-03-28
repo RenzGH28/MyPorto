@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation"; // Ganti dari 'next/router' ke 'next/navigation'
 
 export default function RenzPage() {
   const router = useRouter();
@@ -22,7 +22,7 @@ export default function RenzPage() {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  }, []);
+  }, [router]);
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
