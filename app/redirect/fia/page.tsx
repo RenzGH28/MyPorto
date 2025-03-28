@@ -26,8 +26,8 @@ export default function RenzPage() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-      <h2 className="text-2xl font-semibold mb-4">Halo! Silakan lanjut ke link Renz</h2>
-      <p className="text-lg">Mohon tunggu sebentar<span>{dots}</span></p>
+      <h2 className="text-2xl font-semibold mb-4">Halo Kasyfia, Bentar ya Reren Alihin Dulu...</h2>
+      <p className="text-lg">Tunggu sebentar<span>{dots}</span></p>
     </div>
   );
 }
