@@ -15,7 +15,7 @@ export default function RenzPage() {
 
     // Redirect setelah 3 detik
     const timeout = setTimeout(() => {
-      router.push("https://rztech.vercel.app/kasyfia/pesan-spesial");
+      router.push("https://rztech.vercel.app/kasyfia/special-message");
     }, 3000);
 
     return () => {
@@ -26,7 +26,7 @@ export default function RenzPage() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-900 text-white">
-      <h2 className="text-2xl font-semibold mb-4">Halo Kasyfia, Bentar ya Reren Alihin Dulu...</h2>
+      <h2 className="text-2xl font-semibold mb-4">Halo Hira, Bentar ya Reren Alihin Dulu...</h2>
       <p className="text-lg">Tunggu sebentar<span>{dots}</span></p>
     </div>
   );
