@@ -15,7 +15,7 @@ export default function RenzPage() {
 
     // Redirect setelah 3 detik
     const timeout = setTimeout(() => {
-      router.push("https://rztech.vercel.app/kasyfia/special-message");
+      router.push("https://rztech.vercel.app/pesanuntukmu.html");
     }, 3000);
 
     return () => {
