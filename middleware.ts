@@ -31,7 +31,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Add security headers
-  response.headers.set('X-Frame-Options', 'DENY')
+  response.headers.set('X-Frame-Options', 'ALLOWALL') // DENY OR ALLOWALL
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Referrer-Policy', 'origin-when-cross-origin')
 
