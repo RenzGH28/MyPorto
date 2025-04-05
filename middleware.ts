@@ -8,7 +8,10 @@ export function middleware(request: NextRequest) {
   const userAgent = request.headers.get("user-agent") || ""
 
   // List User-Agent yang diperbolehkan (hanya browser)
-  const allowedAgents = ["Mozilla", "Chrome", "Safari", "Firefox", "Edge"]
+  const allowedAgents = [
+  "Mozilla", "Chrome", "Safari", "Firefox", "Edge",
+  "facebookexternalhit", "Twitterbot", "Slackbot", "WhatsApp"
+]
 
   // Path yang boleh diakses tanpa middleware
   const allowedPaths = [
