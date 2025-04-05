@@ -30,50 +30,61 @@ export default function TebakGambarPage() {
     const input = jawabanUser.trim().toLowerCase()
     const jawabanBenar = data.jawaban.toLowerCase()
     if (input === jawabanBenar) {
-      setHasil('Benar! Kamu hebat!')
+      setHasil('✅ Benar! Kamu hebat!')
     } else {
-      setHasil(`Salah. Jawaban yang benar: ${data.jawaban}`)
+      setHasil(`❌ Salah. Jawaban yang benar: ${data.jawaban}`)
     }
   }
 
   return (
-    <div className="p-4 max-w-xl mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Tebak Gambar</h1>
+    <div className="max-w-xl mx-auto p-4">
+      <div className="bg-muted p-6 rounded-xl shadow-md">
+        <h1 className="text-xl font-semibold mb-4">Tebak Gambar</h1>
 
-      {loading ? (
-        <p>Loading soal...</p>
-      ) : (
-        <>
-          <img src={data.img} alt="Tebak Gambar" className="rounded mb-4" />
+        {loading ? (
+          <p>Loading soal...</p>
+        ) : (
+          <>
+            <img
+              src={data.img}
+              alt="Tebak Gambar"
+              className="rounded-lg mb-4 w-full object-cover"
+            />
 
-          <input
-            type="text"
-            value={jawabanUser}
-            onChange={(e) => setJawabanUser(e.target.value)}
-            className="border p-2 w-full rounded mb-2"
-            placeholder="Masukkan jawabanmu..."
-          />
-          <button
-            onClick={cekJawaban}
-            className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
-          >
-            Cek Jawaban
-          </button>
+            <p className="mb-4 text-sm text-muted-foreground italic">
+              Clue: {data.deskripsi}
+            </p>
 
-          {hasil && (
-            <div className="mt-4 p-2 bg-gray-100 rounded border">
-              {hasil}
-            </div>
-          )}
+            <input
+              type="text"
+              value={jawabanUser}
+              onChange={(e) => setJawabanUser(e.target.value)}
+              className="w-full p-2 border rounded-lg mb-2"
+              placeholder="Masukkan jawabanmu..."
+            />
 
-          <button
-            onClick={fetchSoal}
-            className="mt-4 text-sm text-blue-500 hover:underline"
-          >
-            Soal Berikutnya
-          </button>
-        </>
-      )}
+            <button
+              onClick={cekJawaban}
+              className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+            >
+              Cek Jawaban
+            </button>
+
+            {hasil && (
+              <div className="mt-4 bg-gray-100 text-center p-3 rounded-lg border font-medium">
+                {hasil}
+              </div>
+            )}
+
+            <button
+              onClick={fetchSoal}
+              className="mt-4 w-full text-sm text-blue-500 hover:underline"
+            >
+              Soal Berikutnya
+            </button>
+          </>
+        )}
+      </div>
     </div>
   )
 }
