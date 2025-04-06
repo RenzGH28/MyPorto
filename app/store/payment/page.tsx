@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Wallet, Banknote, Download, ZoomIn, Clipboard, X, Copy } from "lucide-react";
+import { FaUniversity } from "react-icons/fa";
+import { Wallet, Download, ZoomIn, X, Copy } from "lucide-react";
 
 const EwalletData = [
   { providerEWallet: "DANA", numberEWallet: "0895 3293 50352", ownerEWallet: "Darren Jenaro" },
@@ -11,9 +12,9 @@ const EwalletData = [
 ];
 
 const BankData = [
-  { providerBank: "SEABANK", numberBank: "-", ownerBank: "-" },
-  { providerBank: "MANDIRI", numberBank: "-", ownerBank: "-" },
-  { providerBank: "BCA", numberBank: "-", ownerBank: "-" },
+  { providerBank: "SEABANK", numberBank: "Null", ownerBank: "ZxHsu" },
+  { providerBank: "MANDIRI", numberBank: "Null", ownerBank: "Null" },
+  { providerBank: "BCA", numberBank: "Null", ownerBank: "Test" },
 ];
 
 
@@ -78,7 +79,7 @@ export default function PaymentPage() {
                 className="text-emerald-600 hover:text-emerald-800"
                 onClick={() => navigator.clipboard.writeText(item.numberEWallet)}
               >
-                <Clipboard />
+                <Copy />
               </button>
             </div>
           ))}
@@ -88,7 +89,7 @@ export default function PaymentPage() {
       {/* Bank Transfer */}
       <div className="mt-8">
         <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
-          <Banknote className="w-5 h-5" />
+          <FaUniversity className="w-5 h-5" />
           Bank Transfer
         </h2>
         <div className="space-y-4">
