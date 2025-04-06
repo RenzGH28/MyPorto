@@ -4,11 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import { Download, ZoomIn, Clipboard, X } from "lucide-react";
 
-const paymentData = [
-  { name: "DANA", number: "0856 4670 0334", owner: "Evandra Yhoga Pratama" },
-  { name: "GOPAY", number: "0856 4670 0334", owner: "Evandra Yhoga Pratama" },
-  { name: "SHOPEEPAY", number: "0893 2769 2747", owner: "Evandra Yhoga Pratama" },
+const EwalletData = [
+  { providerEWallet: "DANA", numberEWallet: "0895 3293 50352", ownerEWallet: "Darren Jenaro" },
+  { providerEWallet: "GOPAY", numberEWallet: "0838 4520 1171", ownerEWallet: "Darren Jenaro" },
+  { providerEWallet: "SHOPEEPAY", numberEWallet: "0895 3293 50352", ownerEWallet: "Darren Jenaro" },
 ];
+
+const BankData = [
+  { providerBank: "SEABANK", numberBank: "-", ownerBank: "-" },
+  { providerBank: "MANDIRI", numberBank: "-", ownerBank: "-" },
+  { providerBank: "BCA", numberBank: "-", ownerBank: "-" },
+];
+
 
 export default function PaymentPage() {
   const [zoomOpen, setZoomOpen] = useState(false);
@@ -16,12 +23,12 @@ export default function PaymentPage() {
   return (
     <div className="max-w-xl mx-auto p-6">
       <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold">CODEPLAY</h1>
+        <h1 className="text-3xl font-bold">Renz Store</h1>
         <p className="text-xl text-gray-700 mt-2">Digital Payment</p>
       </div>
 
       {/* QRIS */}
-      <div className="border-2 border-dashed rounded-xl p-4 mb-4">
+      <div className="border-2 border-dashed rounded-xl p-6 mb-4">
         <Image
           src="/images/qris.jpg"
           alt="QRIS"
@@ -54,16 +61,38 @@ export default function PaymentPage() {
       <div className="mt-8">
         <h2 className="text-xl font-semibold mb-4">E-Wallet</h2>
         <div className="space-y-4">
-          {paymentData.map((item, idx) => (
+          {EwalletData.map((item, idx) => (
             <div key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center">
               <div>
-                <p className="font-bold">{item.name}</p>
-                <p className="text-sm">{item.number}</p>
-                <p className="text-sm">A/n {item.owner}</p>
+                <p className="font-bold">{item.providerEWallet}</p>
+                <p className="text-sm">{item.numberEWallet}</p>
+                <p className="text-sm">A/n {item.owneEWalletr}</p>
               </div>
               <button
                 className="text-emerald-600 hover:text-emerald-800"
-                onClick={() => navigator.clipboard.writeText(item.number)}
+                onClick={() => navigator.clipboard.writeText(item.numberEWallet)}
+              >
+                <Clipboard />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {/* Bank Transfer */}
+      <div className="mt-8">
+        <h2 className="text-xl font-semibold mb-4">Bank Transfer</h2>
+        <div className="space-y-4">
+          {BankData.map((item, idx) => (
+            <div key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+              <div>
+                <p className="font-bold">{item.providerBank}</p>
+                <p className="text-sm">{item.numberBank}</p>
+                <p className="text-sm">A/n {item.ownerBank}</p>
+              </div>
+              <button
+                className="text-emerald-600 hover:text-emerald-800"
+                onClick={() => navigator.clipboard.writeText(item.numberBank)}
               >
                 <Clipboard />
               </button>
