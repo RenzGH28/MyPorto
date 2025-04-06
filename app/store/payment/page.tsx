@@ -66,7 +66,7 @@ export default function PaymentPage() {
               <div>
                 <p className="font-bold">{item.providerEWallet}</p>
                 <p className="text-sm">{item.numberEWallet}</p>
-                <p className="text-sm">A/n {item.ownerEWalletr}</p>
+                <p className="text-sm">A/n {item.ownerEWallet}</p>
               </div>
               <button
                 className="text-emerald-600 hover:text-emerald-800"
