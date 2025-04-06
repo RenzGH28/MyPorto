@@ -76,7 +76,7 @@ export default function PaymentPage() {
                 <p className="text-sm">A/n {item.ownerEWallet}</p>
               </div>
               <button
-                className="text-cyan-400 hover:text-blue-800"
+                className="text-cyan-400 hover:text-blue-600"
                 onClick={() => navigator.clipboard.writeText(item.numberEWallet)}
               >
                 <Copy />
@@ -104,7 +104,7 @@ export default function PaymentPage() {
                 <p className="text-sm">A/n {item.ownerBank}</p>
               </div>
               <button
-                className="text-cyan-400 hover:text-blue-800"
+                className="text-cyan-400 hover:text-blue-600"
                 onClick={() => navigator.clipboard.writeText(item.numberBank)}
               >
                 <Copy />
