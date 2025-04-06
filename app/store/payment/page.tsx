@@ -41,7 +41,7 @@ export default function PaymentPage() {
         <div className="flex justify-center gap-4 mt-4">
           <button
             onClick={() => setZoomOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700"
+            className="flex items-center gap-2 px-4 py-2 bg-red-400 text-white rounded-lg hover:bg-emerald-700"
           >
             <ZoomIn size={18} />
             Perbesar
@@ -76,7 +76,7 @@ export default function PaymentPage() {
                 <p className="text-sm">A/n {item.ownerEWallet}</p>
               </div>
               <button
-                className="text-emerald-600 hover:text-emerald-800"
+                className="text-emerald-600 hover:text-red-800"
                 onClick={() => navigator.clipboard.writeText(item.numberEWallet)}
               >
                 <Copy />
@@ -104,7 +104,7 @@ export default function PaymentPage() {
                 <p className="text-sm">A/n {item.ownerBank}</p>
               </div>
               <button
-                className="text-emerald-600 hover:text-emerald-800"
+                className="text-emerald-600 hover:text-red-800"
                 onClick={() => navigator.clipboard.writeText(item.numberBank)}
               >
                 <Copy />
