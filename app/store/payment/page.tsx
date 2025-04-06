@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Download, ZoomIn, Clipboard, X } from "lucide-react";
+import { Wallet, Banknote, Download, ZoomIn, Clipboard, X, Copy } from "lucide-react";
 
 const EwalletData = [
   { providerEWallet: "DANA", numberEWallet: "0895 3293 50352", ownerEWallet: "Darren Jenaro" },
@@ -59,10 +59,16 @@ export default function PaymentPage() {
 
       {/* E-Wallet */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">E-Wallet</h2>
+        <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <Wallet className="w-5 h-5" />
+          E-Wallet
+        </h2>
         <div className="space-y-4">
           {EwalletData.map((item, idx) => (
-            <div key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+            <div
+              key={idx}
+              className="bg-white p-4 rounded-xl shadow flex justify-between items-center"
+            >
               <div>
                 <p className="font-bold">{item.providerEWallet}</p>
                 <p className="text-sm">{item.numberEWallet}</p>
@@ -78,13 +84,19 @@ export default function PaymentPage() {
           ))}
         </div>
       </div>
-      
+
       {/* Bank Transfer */}
       <div className="mt-8">
-        <h2 className="text-xl font-semibold mb-4">Bank Transfer</h2>
+        <h2 className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <Banknote className="w-5 h-5" />
+          Bank Transfer
+        </h2>
         <div className="space-y-4">
           {BankData.map((item, idx) => (
-            <div key={idx} className="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+            <div
+              key={idx}
+              className="bg-white p-4 rounded-xl shadow flex justify-between items-center"
+            >
               <div>
                 <p className="font-bold">{item.providerBank}</p>
                 <p className="text-sm">{item.numberBank}</p>
@@ -94,7 +106,7 @@ export default function PaymentPage() {
                 className="text-emerald-600 hover:text-emerald-800"
                 onClick={() => navigator.clipboard.writeText(item.numberBank)}
               >
-                <Clipboard />
+                <Copy />
               </button>
             </div>
           ))}
